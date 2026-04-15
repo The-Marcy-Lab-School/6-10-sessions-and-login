@@ -137,8 +137,9 @@ showAuthBtn.addEventListener('click', showAuthSection);
 
 // On every page load: check session -> update view -> load users
 const main = async () => {
-  const { data } = await getCurrentUser();
-  currentUser = data;
+  // TODO: fetch `GET /api/auth/me` to see if you are logged in and update currentUser
+  // const { data } = await getCurrentUser();
+  // currentUser = data;
   renderAuthView(currentUser);
   if (currentUser) renderProfile(currentUser);
   await refreshUsers();

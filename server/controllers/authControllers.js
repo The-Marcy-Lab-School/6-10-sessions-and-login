@@ -15,8 +15,7 @@ const register = async (req, res, next) => {
 
     const user = await userModel.create(username, password);
 
-    // Start a session — the user is now logged in
-    req.session.userId = user.user_id;
+    // TODO: Start a session — the user is now logged in
 
     res.status(201).send(user);
   } catch (err) {

@@ -5,16 +5,14 @@
 const path = require('path');
 const express = require('express');
 
-// 🔎 Load .env variables and import the cookie session module
-require('dotenv').config();
-const cookieSession = require('cookie-session');
+// 🔎TODO: Import the cookie session module
 
 const logRoutes = require('./middleware/logRoutes');
 const { register, login, getMe, logout } = require('./controllers/authControllers');
 const { listUsers, updateUser, deleteUser } = require('./controllers/userControllers');
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = 8080;
 
 const pathToFrontend = process.env.NODE_ENV === 'production' ? '../frontend/dist' : '../frontend';
 
@@ -24,12 +22,8 @@ const pathToFrontend = process.env.NODE_ENV === 'production' ? '../frontend/dist
 
 app.use(logRoutes);
 
-// 🔎 Add a 'session' object to all requests with the cookie
-app.use(cookieSession({
-  name: 'session',
-  secret: process.env.SESSION_SECRET,
-  maxAge: 24 * 60 * 60 * 1000, // The cookie lasts for 24 hours
-}));
+// 🔎 TODO: Use cookieSession middleware to add a 'session' object to all requests with the cookie
+
 app.use(express.json());
 app.use(express.static(path.join(__dirname, pathToFrontend)));
 
