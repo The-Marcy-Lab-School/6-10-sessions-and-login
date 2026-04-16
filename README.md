@@ -23,8 +23,6 @@ node db/seed.js
 npm run dev
 ```
 
-3. Make a copy of the `.env.template file` file
-
 Seeded users (all have these passwords):
 
 | Username | Password    |
