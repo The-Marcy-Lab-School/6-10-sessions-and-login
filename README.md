@@ -23,6 +23,8 @@ node db/seed.js
 npm run dev
 ```
 
+3. Open the app and sign in to one of the users below
+
 Seeded users (all have these passwords):
 
 | Username | Password    |

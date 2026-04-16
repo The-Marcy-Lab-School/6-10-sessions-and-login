@@ -37,7 +37,7 @@ const login = async (req, res, next) => {
     }
 
     // Credentials are valid — start a session
-    req.session.userId = user.user_id;
+    // TODO: Start a session — the user is now logged in
 
     res.send(user);
   } catch (err) {
